@@ -38,6 +38,8 @@ class CustomUser(AbstractUser):
     phone_number = models.CharField(max_length=15) # This field handles the contact info of the user.
     emergency_contact = models.CharField(max_length=15) # This field takes in the contact of the person to call incase of an emergency.
     address = models.CharField(max_length=50) # This fields adds the address of the user to the user's information.
+    password1 = models.CharField(max_length=128, blank=True) # This allows a user to be created without a password.
+    password2 = models.CharField(max_length=128, blank=True)
 
 # This is a student model which include additional fields for the necessary information about a student user.
 # It is connected to the customuser model through a onetoonefield relationship. Meaning, an instance of a customuser
