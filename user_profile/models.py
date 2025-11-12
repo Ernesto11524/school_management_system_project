@@ -30,6 +30,7 @@ class CustomUser(AbstractUser):
         ('Female', 'Female'),
     )
     username = models.CharField(max_length=30, null=False, blank=True, unique=True)
+    other_names = models.CharField(max_length=100, blank=True, null=True) # This field will take in the middle names of users.
     role = models.CharField(max_length=50, choices=ROLE_CHOICES) # This field identifies the role of the user in the school.
     profile_picture = models.ImageField() # This field allow us add a picture to the user's profile for easy identification.
     date_of_birth = models.DateField(null=True) # This field is reposible for the user's date of birth.
